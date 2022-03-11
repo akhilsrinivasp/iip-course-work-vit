@@ -1,7 +1,8 @@
+from re import template
 from flask import Flask, render_template
 from flask import request
 from flask import url_for
-app = Flask(__name__)
+app = Flask(__name__, template_folder = 'templates')
 
 @app.route('/', methods=["GET", "POST"])
 def hello_world():
