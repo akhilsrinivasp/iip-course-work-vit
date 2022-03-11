@@ -15,7 +15,7 @@
 			<div class="row justify-content-sm-center h-100">
 				<div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
 					<div class="text-center my-5">
-						<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="logo" width="100">
+						<br><br><br>
 					</div>
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
@@ -38,6 +38,14 @@
 								</div>
 
 								<div class="mb-3">
+									<label class="mb-2 text-muted" for="pan_no">PAN Number</label>
+									<input autocapitalize = 'on' id='text' type="text" class="form-control" name="pan_no" value="" required>
+									<div class="invalid-feedback">
+										Email is invalid
+									</div>
+								</div>
+
+								<div class="mb-3">
 									<label class="mb-2 text-muted" for="password">Password</label>
 									<input id="password" type="password" class="form-control" name="password" required>
 								    <div class="invalid-feedback">
@@ -46,7 +54,8 @@
 								</div>
 
 								<p class="form-text text-muted mb-3">
-									By registering you agree with our terms and condition.
+									By registering you agree with our 
+									<a href="">Terms and conditions</a>.
 								</p>
 
 								<div class="align-items-center d-flex">
@@ -58,12 +67,12 @@
 						</div>
 						<div class="card-footer py-3 border-0">
 							<div class="text-center">
-								Already have an account? <a href="index.html" class="text-dark">Login</a>
+								Already have an account? <a href={{url_for('login')}} class="text-dark">Login</a>
 							</div>
 						</div>
 					</div>
-					<div class="text-center mt-5 text-muted">
-						Copyright &copy; 2017-2021 &mdash; Your Company 
+					<div class="text-center mt-5 text-muted" style ="padding: 0 0 10% 0;">
+						@Banking-Software
 					</div>
 				</div>
 			</div>
