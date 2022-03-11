@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/', methods=["GET", "POST"])
 def hello_world():
     name = "Akhil"
-    return render_template("index.html", display_name=name)
+    return render_template("Templates/index.html", display_name=name)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -22,6 +22,7 @@ def register_new():
     return render_template("/login_page/register.html")
 
 if __name__ == '__main__':
-    app.debug=True
-    app.run()
+    app.run(
+        debug=False
+    )
     
