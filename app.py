@@ -2,6 +2,7 @@ from cmd import IDENTCHARS
 from email.message import EmailMessage
 from enum import unique
 from re import template
+from unicodedata import name
 
 from flask import Flask, render_template
 from flask import request
@@ -48,9 +49,18 @@ def login():
     if request.method == "GET":
         return render_template('/login_page/login.html')
     if request.method == "POST":
+        temp_email = request.form['email']
         users = user.query.all()
-        return render_template('/dashboard/dash.html', users = users)
-    
+        temp_name = None
+        for use in users: 
+            if use.email == temp_email:
+                temp_name = use.name
+        if temp_name == None:
+            return render_template('/login_page/no_user_found.html')
+        else:
+            return render_template('/dashboard/dash.html', email = temp_name)
+
+        
 @app.route("/forgot_password")
 def forgot():
     return render_template("/login_page/forgot.html")
