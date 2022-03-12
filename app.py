@@ -40,17 +40,17 @@ class RegisterForm(FlaskForm):
 
 @app.route('/', methods=["GET", "POST"])
 def hello_world():
-    name = "Akhil"
-    users = user.query.all()
-    print(users)
-    return render_template("index.html", users = users) + str(type(users))
+    welcome_text = 'Welcome to the netbanking portal'
+    return render_template("index.html", display_name = welcome_text)
 
 @app.route("/login", methods=["GET", "POST"])
 def login(): 
     if request.method == "GET":
         return render_template('/login_page/login.html')
     if request.method == "POST":
-        return.method
+        users = user.query.all()
+        return render_template('/dashboard/dash.html', users = users)
+    
 @app.route("/forgot_password")
 def forgot():
     return render_template("/login_page/forgot.html")
