@@ -1,4 +1,4 @@
-# iip-course-work-vit
+# Simple Banking login system - PHY1901 IIP - VIT Vellore
 A simple webpage based on Flask to demonstrate SQL Injection. This is used for a College project. 
 
 ```
